@@ -63,15 +63,15 @@ void BankAccount::output()
 }
 */
 
-//p220 c++»ù´¡Óë°¸Àı¿ª·¢Ïê½â
+//p220 c++åŸºç¡€ä¸æ¡ˆä¾‹å¼€å‘è¯¦è§£
 /*
 #include<iostream>
 using namespace std;
 class CComplex{
 public:
-    CComplex(double,double);  //¹¹Ôìº¯Êı
-    CComplex(CComplex &c); //¿½±´¹¹Ôìº¯Êı
-    CComplex add(CComplex &x); //¶ÔÏó×÷Îªº¯Êı·µ»ØÖµ
+    CComplex(double,double);  //æ„é€ å‡½æ•°
+    CComplex(CComplex &c); //æ‹·è´æ„é€ å‡½æ•°
+    CComplex add(CComplex &x); //å¯¹è±¡ä½œä¸ºå‡½æ•°è¿”å›å€¼
     void Print();
 private:
     double real;
@@ -82,14 +82,14 @@ CComplex::CComplex(double r=0.0,double i=0.0)
 {
     real=r;
     imag=i;
-    cout<<"µ÷ÓÃÁ½¸ö²ÎÊıµÄ¹¹Ôìº¯Êı"<<endl;
+    cout<<"è°ƒç”¨ä¸¤ä¸ªå‚æ•°çš„æ„é€ å‡½æ•°"<<endl;
 }
 
 CComplex::CComplex(CComplex &c)
 {
     real=c.real;
     imag=c.imag;
-    cout<<"µ÷ÓÃ¿½±´¹¹Ôìº¯Êı"<<endl;
+    cout<<"è°ƒç”¨æ‹·è´æ„é€ å‡½æ•°"<<endl;
 }
 
 void CComplex::Print()
@@ -125,7 +125,7 @@ int main()
 
 */
 
-//c++»ù´¡Óë°¸Àı¿ª·¢Ïê½â
+//c++åŸºç¡€ä¸æ¡ˆä¾‹å¼€å‘è¯¦è§£
 /*
 #include<iostream>
 #include<string.h>
@@ -135,7 +135,7 @@ public:
     CClass(char *,int);
     ~CClass()
     {
-        cout<<"Îö¹¹°à¼¶£º"<<pname<<endl;
+        cout<<"ææ„ç­çº§ï¼š"<<pname<<endl;
         delete pname;
     }
     void Print();
@@ -150,7 +150,7 @@ CClass::CClass(CClass &s)
     if(pname!=NULL)
         strcpy(pname,s.pname);
     num=s.num;
-    cout<<"´´½¨°à¼¶µÄ¿½±´"<<pname<<endl;
+    cout<<"åˆ›å»ºç­çº§çš„æ‹·è´"<<pname<<endl;
 }
 CClass::CClass(char *cName,int snum)
 {
@@ -159,15 +159,15 @@ CClass::CClass(char *cName,int snum)
     if(pname!=NULL)
         strcpy(pname,cName);
     num=snum;
-    cout<<"´´½¨°à¼¶£º"<<pname<<endl;
+    cout<<"åˆ›å»ºç­çº§ï¼š"<<pname<<endl;
 }
 void CClass::Print()
 {
-    cout<<pname<<"°à¼¶µÄÈËÊıÎª£º"<<num<<endl;
+    cout<<pname<<"ç­çº§çš„äººæ•°ä¸ºï¼š"<<num<<endl;
 }
 int main()
 {
-    CClass c1("¼ÆËã»ú111°à",56);
+    CClass c1("è®¡ç®—æœº111ç­",56);
     CClass c2(c1);
     c1.Print();
     c2.Print();
@@ -175,7 +175,7 @@ int main()
 }
 */
 
-
+//æˆ‘å†™çš„å½’å¹¶ï¼Œå‚ç…§i=i++
 #include<iostream>
 #include<time.h>
 #include<stdlib.h>
@@ -227,7 +227,7 @@ void mergeArray(int a[],int p,int m, int r)
     int *temp=new int[MAXSIZE];
     if(temp==NULL)
     {
-        cout<<"Êı×éÅÅĞòÊ§°Ü";
+        cout<<"æ•°ç»„æ’åºå¤±è´¥";
         return;
     }
     int k=0,i=p,j=m+1;
@@ -244,21 +244,22 @@ void mergeArray(int a[],int p,int m, int r)
         temp[k++] = a[j++];
     for(i=0;i<k;i++)
     {
-        a[p+i]=temp[i];  //ÕâÀï±ØĞëÊÇ a[p+i]£¬²»ÄÜÊÇa[i],ÒòÎªÊı×éa´ËÊ±µÄµØÖ·ÒÑ¾­¸Ä±ä£¬²»ÔÙÊÇ³õÊ¼µØÖ·£¡£¡£¡
+        a[p+i]=temp[i];  //è¿™é‡Œå¿…é¡»æ˜¯ a[p+i]ï¼Œä¸èƒ½æ˜¯a[i],å› ä¸ºæ•°ç»„aæ­¤æ—¶çš„åœ°å€å·²ç»æ”¹å˜ï¼Œä¸å†æ˜¯åˆå§‹åœ°å€ï¼ï¼ï¼
     }
     delete[] temp;
 }
 
 
 
-//²©¿ÍÔ° i=i++
+//åšå®¢å›­ i=i++
+//http://www.cnblogs.com/Braveliu/archive/2013/01/14/2860456.html
 //#include<iostream>
 //#include<stdlib.h>
 //#include<time.h>
 //using namespace std;
 //#define  MAXSIZE  10
 //
-////½«Á½¸öÓĞĞòÊıÁĞa[first...mid] ºÍ a[mid...last] ºÏ²¢¡£
+////å°†ä¸¤ä¸ªæœ‰åºæ•°åˆ—a[first...mid] å’Œ a[mid...last] åˆå¹¶ã€‚
 //void mergearray(int a[], int first, int mid, int last, int temp[])
 //{
 //    int i = first, j = mid + 1;
@@ -287,9 +288,9 @@ void mergeArray(int a[],int p,int m, int r)
 //    if (first < last)
 //    {
 //        int mid = (first + last) / 2;
-//        mergesort(a, first, mid, temp);     //×ó±ßÓĞĞò
-//        mergesort(a, mid + 1, last, temp);  //ÓÒ±ßÓĞĞò
-//        mergearray(a, first, mid, last, temp); //ÔÙ½«Á½¸öÓĞĞòÊıÁĞºÏ²¢
+//        mergesort(a, first, mid, temp);     //å·¦è¾¹æœ‰åº
+//        mergesort(a, mid + 1, last, temp);  //å³è¾¹æœ‰åº
+//        mergearray(a, first, mid, last, temp); //å†å°†ä¸¤ä¸ªæœ‰åºæ•°åˆ—åˆå¹¶
 //    }
 //}
 //
@@ -329,8 +330,9 @@ void mergeArray(int a[],int p,int m, int r)
 //
 
 
-
-////¹ØÓÚ´úÂë×¢ÊÍ£¬Çë¼û²©¿ÍÉÏÃæµÄÎ±´úÂë×¢ÊÍ..
+//åšå®¢å›­ å¤§ç†Šå…ˆç”Ÿ
+//http://www.cnblogs.com/Creator/archive/2011/06/18/2084267.html
+////å…³äºä»£ç æ³¨é‡Šï¼Œè¯·è§åšå®¢ä¸Šé¢çš„ä¼ªä»£ç æ³¨é‡Š..
 //#include<stdio.h>
 //int L[100],R[100];
 //void merge(int numbers[],int left, int mid, int right)
