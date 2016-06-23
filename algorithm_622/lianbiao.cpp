@@ -39,7 +39,7 @@ ListNode* AddToLinkedList(ListNode* pHead, int value, int insertValue)
         pHead=p;    
        return pHead;
     }
-    ListNode *pNode=pHead,*pNode_insert;
+    ListNode *pNode=pHead,*pNode_insert; 
     while(pNode->next!=NULL && pNode->next->value!=value)
         pNode=pNode->next;
     if(pNode->next==NULL)
