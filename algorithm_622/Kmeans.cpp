@@ -4,7 +4,7 @@
 #include <math.h>
 #define k 3
 using namespace std;
-
+ 
 struct Tuple
 {
     float attr1;
