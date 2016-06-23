@@ -22,7 +22,7 @@ void mergeArray(int a[],int p,int mid, int r)
 {
     int *temp=new int[100];
     int i=p,j=mid+1;
-    int k=0;
+    int k=0; 
     while(i<=mid && j<=r)
     {
         if(a[i]<=a[j])
