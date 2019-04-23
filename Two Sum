@@ -1,0 +1,58 @@
+1.Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+Example:
+
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+
+
+sol1:brote force
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        if len(nums) < 2:
+            return []
+        else:
+            i = 0
+            while i<len(nums)-1:
+                cha = target - nums[i]
+                j = 0
+                while j < len(nums) - 1:
+                    if nums[j] == cha and j!=i:
+                        return [i,j]
+                    else:
+                        j+=1
+                        continue
+                    
+                i+=1
+                    
+sol2: hashTable
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        i = 0
+        indexMap = {}
+        while i < len(nums):
+            indexMap[nums[i]] = i
+            i+=1
+        i = 0
+        while i<len(nums):
+            ele = nums[i]
+            complement = target - ele
+            get_ele = indexMap.get(complement,'')
+            if get_ele != '' and get_ele!= i:
+                return [i, get_ele]
+            i+=1
